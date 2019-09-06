@@ -9,24 +9,17 @@ class App extends React.Component {
     this.state = {
       users:[]
     }
+    console.log("State in constructor:",this.state)
   }
-
-    // componentDidMount() {
-    //   fetch("https://api.github.com/users/kly001")
-    //     .then(res => res.json())
-    //     .then(dogs => this.setState({ doggos: dogs.message }))
-    //     .catch(err => console.log("noooo: ", err));
-    // }
   
     componentDidMount() {
       axios
         .get("https://api.github.com/users/kly001")
-        .then(res => {console.log(res)
+        .then(res => {console.log("res:",res)
         })
         .catch(error => console.log(error))
   }
-    
-
+  
   render() {
   return (
     <div className="App">
