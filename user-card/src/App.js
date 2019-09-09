@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import User from "./component/User";
 import Followers from "./component/Followers";
 
 
@@ -37,8 +36,12 @@ class App extends React.Component {
   return (
     <div className="App">
      <h1>React GitHub User Card Project</h1>
-      <h2>User:</h2>
-      <User />
+     <div className="user-card">
+        <h2>User:</h2>
+        <p>{this.state.user.login}</p>
+        <p>{this.state.user.created_at}</p>
+        <p>{this.state.user.url}</p>
+     </div>
       <h3>Followers:</h3>
       <Followers />
     </div>
