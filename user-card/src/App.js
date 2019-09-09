@@ -18,23 +18,22 @@ class App extends React.Component {
     componentDidMount() {
      fetch("https://api.github.com/users/kly001")
         .then(res => res.json())
-        .then(res => {this.setState({user: res.data})
-          console.log("Apps => user:",res)
-        })
+        .then(res => this.setState({user: res})
+        )
         .catch(error => console.log(error))
        
 
         fetch("https://api.github.com/users/kly001/followers")
         .then(res => res.json())
-        .then(res => {this.setState({followers: res.data})
-          console.log("App => followers:",res)
-        })
+        .then(res => this.setState({followers: res})
+        )
         .catch(error => console.log(error))
           
   }
   
   render() {
-    console.log("App=>rendering:",this.state)
+    console.log("App=>rendering User:",this.state.user)
+    console.log("App=>rendering Followers:",this.state.followers )
   return (
     <div className="App">
      <h1>React GitHub User Card Project</h1>
