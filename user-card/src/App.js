@@ -44,16 +44,14 @@ class App extends React.Component {
      </div>
      <div className="followers-card">
         <h3>Followers:</h3>
-       <p>{this.state.user.followers}</p>
-      </div>
       {this.state.followers.map(follower => 
-        <Followers follower={follower}>
-
+        <Followers 
+         follower={follower}>
         </Followers>
       )}
+        </div>
     </div>
-    
-  );
+   );
   }
 }
 
