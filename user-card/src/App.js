@@ -5,13 +5,13 @@ import Followers from "./component/Followers";
 
 class App extends React.Component {
   constructor() {
-    console.log("Constructor invoked")
+    // console.log("Constructor invoked")
     super();
     this.state = {
       user:{},
       followers:[]
     }
-    console.log("State in constructor:",this.state)
+    // console.log("State in constructor:",this.state)
   }
   
     componentDidMount() {
@@ -42,8 +42,15 @@ class App extends React.Component {
         <p>{this.state.user.created_at}</p>
         <p>{this.state.user.url}</p>
      </div>
-      <h3>Followers:</h3>
-      <Followers />
+     <div className="followers-card">
+        <h3>Followers:</h3>
+       <p>{this.state.user.followers}</p>
+      </div>
+      {this.state.followers.map(follower => 
+        <Followers follower={follower}>
+
+        </Followers>
+      )}
     </div>
     
   );

@@ -1,9 +1,8 @@
 import React from "react";
 
 const Followers = props => {
-    console.log("Followers:", props)
     return(
-        <p> This is the Followers Component</p>
+        <p> {props.follower.login}</p>
     )
 }
 
